@@ -33,25 +33,91 @@ The collection operator who performs actions such as calls, emails and case hand
 Agents appear as system actors performing actions but are not considered owners or customers.
 
 
-## Data Model
+## Entity Relationship Diagram
 
-The main structure of the database is:
+```mermaid
+erDiagram
 
-cases
-│
-├── relations
-│     └── entities
-│            ├── demographics
-│            └── communication
-│                   ├── phones
-│                   ├── addresses
-│                   └── email
-│
-└── assignments
-      ├── transactions
-      ├── actions
-      └── dynamic_fields
+entities ||--o{ relations : has
+entities ||--|| demographics : has
+entities ||--o{ communication : has
 
+communication ||--o{ phones : contains
+communication ||--o{ addresses : contains
+communication ||--o{ email : contains
+
+relations ||--o{ cases : owner
+
+entities ||--o{ cases : customer
+
+cases ||--o{ assignments : includes
+
+assignments ||--o{ actions : generates
+assignments ||--o{ transactions : records
+assignments ||--|| dynamic_fields : metrics
+
+entities {
+    int entity_id PK
+    nvarchar entity_alias
+}
+
+demographics {
+    int entity_id PK
+    nvarchar entity_taxnumber
+}
+
+relations {
+    int relation_id PK
+    int entity_id FK
+    nvarchar relation_type
+}
+
+cases {
+    int case_id PK
+    nvarchar case_refno
+    int case_owner_relation_id
+    int case_entitycustomer_id
+}
+
+assignments {
+    int assign_id PK
+    int case_id
+}
+
+actions {
+    int act_id PK
+    int assign_id
+}
+
+transactions {
+    int tran_id PK
+    int assign_id
+}
+
+dynamic_fields {
+    int assign_id PK
+}
+
+communication {
+    int com_id PK
+    int entity_id
+}
+
+phones {
+    int phone_id PK
+    int com_id
+}
+
+addresses {
+    int address_id PK
+    int com_id
+}
+
+email {
+    int email_id PK
+    int com_id
+}
+```
 
 ## Example Case Lifecycle
 
