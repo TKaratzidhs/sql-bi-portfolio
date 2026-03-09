@@ -1,33 +1,3 @@
-/*
-cases
-│
-├── relations (case_owner_relation_id)
-│    │
-│    └── entities
-│          │
-│          ├── demographics
-│          │
-│          └── communication
-│                │
-│                ├── phones
-│                ├── addresses
-│                └── email
-│
-└── assignments
-      │
-      ├── transactions
-      │
-      ├── actions
-      │
-      └── dynamic_fields
-*/
-CREATE DATABASE DemoCollectionDB;
-GO
-
-USE DemoCollectionDB;
-GO
-
-
 CREATE TABLE entities (
     entity_id INT IDENTITY(1,1) PRIMARY KEY,
     entity_alias NVARCHAR(100),
@@ -219,3 +189,6 @@ CREATE TABLE email (
     CONSTRAINT FK_email_communication
     FOREIGN KEY (com_id) REFERENCES communication(com_id)
 );
+
+
+
