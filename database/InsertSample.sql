@@ -150,7 +150,7 @@ case_refno,
 case_owner_refno,
 case_owner_relation_id,
 case_entitycustomer_id,
-creatdt) VALUES
+createdt) VALUES
 (@CASE1,'CASE-1001','NBG-1',@REL_GIANNIS,@NBG,'2025-03-03'),
 (@CASE2,'CASE-1002','NBG-2',@REL_MARIA,@NBG,'2025-03-04'),
 (@CASE3,'CASE-1003','ALPHA-1',@REL_NIKOS,@ALPHA,'2025-03-05'),
@@ -366,5 +366,22 @@ add_type) VALUES
 
 
 
+
+
+
+
+
+select * from actions
+select * from addresses 
+select * from assignments 
+select * from cases 
+select * from communication
+select * from demographics 
+select * from dynamic_fields 
+select * from email 
+select * from entities 
+select * from phones 
+select * from relations 
+select * from transactions 
 
 
