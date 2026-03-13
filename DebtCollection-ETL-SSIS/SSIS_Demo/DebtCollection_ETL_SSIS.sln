@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS_Demo", "DebtCollection_ETL_SSIS\obj\Development\SSIS_Demo.dtproj", "{9062140B-892C-192B-28B5-2660A9FAAAA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9062140B-892C-192B-28B5-2660A9FAAAA4}.Development|Default.ActiveCfg = Development
+		{9062140B-892C-192B-28B5-2660A9FAAAA4}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5919ED35-B0C8-4DB5-A569-A21EDC359131}
+	EndGlobalSection
+EndGlobal
